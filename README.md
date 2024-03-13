@@ -24,7 +24,7 @@ Screenshots of the performance testing with CLI:
 ![Screenshots of highest-gpa Test Plan](https://imgur.com/VOhOsVK.png)
 
 ### Conclusion
-Berikut adalah hasil hasil performance test menggunakan JMeter setelah mengoptimisasi kode:
+Berikut adalah hasil performance test menggunakan JMeter setelah mengoptimisasi kode:
 
 ### `/all-student`:
 ![all-student-request in Table screenshot](https://imgur.com/5eHvYud.png)
