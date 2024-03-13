@@ -24,7 +24,7 @@ Screenshots of the performance testing with CLI:
 ![Screenshots of highest-gpa Test Plan](https://imgur.com/VOhOsVK.png)
 
 ### Conclusion
-Berikut adalah hasil performance test menggunakan JMeter setelah mengoptimisasi kode:
+Setelah melakukan performance optimization process, bisa diketahui bahwa processing time dari method bisa menjadi lebih cepat. Berikut adalah hasil performance test menggunakan JMeter:
 
 ### `/all-student`:
 ![all-student-request in Table screenshot](https://imgur.com/5eHvYud.png)
