@@ -26,26 +26,26 @@ public class StudentService {
     private StudentCourseRepository studentCourseRepository;
 
     public List<StudentCourse> getAllStudentsWithCourses() {
-    List<Student> students = studentRepository.findAll();
-    List<StudentCourse> allStudentCourses = studentCourseRepository.findAll();
+        List<Student> students = studentRepository.findAll();
+        List<StudentCourse> allStudentCourses = studentCourseRepository.findAll();
 
-    Map<Long, List<StudentCourse>> studentCoursesByStudentId = allStudentCourses.stream()
-        .collect(Collectors.groupingBy(sc -> sc.getStudent().getId()));
+        Map<Long, List<StudentCourse>> studentCoursesByStudentId = allStudentCourses.stream()
+            .collect(Collectors.groupingBy(sc -> sc.getStudent().getId()));
 
-    List<StudentCourse> studentCourses = new ArrayList<>();
-    for (Student student : students) {
-        List<StudentCourse> studentCoursesByStudent = studentCoursesByStudentId.get(student.getId());
-        if (studentCoursesByStudent != null) {
-            for (StudentCourse studentCourseByStudent : studentCoursesByStudent) {
-                StudentCourse studentCourse = new StudentCourse();
-                studentCourse.setStudent(student);
-                studentCourse.setCourse(studentCourseByStudent.getCourse());
-                studentCourses.add(studentCourse);
+        List<StudentCourse> studentCourses = new ArrayList<>();
+        for (Student student : students) {
+            List<StudentCourse> studentCoursesByStudent = studentCoursesByStudentId.get(student.getId());
+            if (studentCoursesByStudent != null) {
+                for (StudentCourse studentCourseByStudent : studentCoursesByStudent) {
+                    StudentCourse studentCourse = new StudentCourse();
+                    studentCourse.setStudent(student);
+                    studentCourse.setCourse(studentCourseByStudent.getCourse());
+                    studentCourses.add(studentCourse);
+                }
             }
         }
+        return studentCourses;
     }
-    return studentCourses;
-}
 
     public Optional<Student> findStudentWithHighestGpa() {
         return studentRepository.findStudentWithHighestGpa();
